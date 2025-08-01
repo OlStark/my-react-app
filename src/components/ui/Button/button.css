@@ -1,0 +1,26 @@
+.button {
+  width: 90px;
+  height: 50px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.button.selected {
+  background-color: #959595;
+  color: #1a1a1a;
+  border-color: #1a1a1a;
+  color: #ebebeb;
+}
+
+.button:hover:not(.selected) {
+  background-color: #f0f0f0;
+}
+
+.button-icon {
+  margin-right: 8px;
+}
+
+.button-title {
+  vertical-align: middle;
+}
