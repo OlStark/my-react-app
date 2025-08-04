@@ -8,7 +8,7 @@ interface ButtonProps {
     iconSvg?: React.FC<React.SVGProps<SVGSVGElement>>;
     altIcon?: string;
     isDisabled?: boolean;
-    isSelected?: boolean; // Новый пропс для состояния выбора
+    isSelected?: boolean;
 }
 
 export const Button = ({
@@ -19,7 +19,7 @@ export const Button = ({
     onClick,
     title = '',
     isDisabled,
-    isSelected = false // Значение по умолчанию
+    isSelected = false
 }: ButtonProps) => {
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         if (!isDisabled && onClick) {
@@ -33,7 +33,6 @@ export const Button = ({
             ? className
             : (className ? [className] : []);
 
-        // Добавляем класс для выбранного состояния
         if (isSelected) {
             classes.push('selected');
         }
@@ -48,7 +47,7 @@ export const Button = ({
             onClick={handleClick}
             className={getButtonClasses()}
             disabled={isDisabled}
-            aria-pressed={isSelected} // Для доступности
+            aria-pressed={isSelected}
         >
             {icon && <img src={icon} alt={altIcon} />}
             {IconSvg && <IconSvg className='button-icon' />}
